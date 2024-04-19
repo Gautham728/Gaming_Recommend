@@ -6,8 +6,8 @@ import textwrap
 # Load and Cache the data
 @st.cache(persist=True)
 def getdata():
-    games_df = pd.read_csv('C:/Users/User/Desktop/game/Game-recommendation-system-main/Games_dataset.csv', index_col=0)
-    similarity_df = pd.read_csv('C:/Users/User/Desktop/game/Game-recommendation-system-main/sim_matrix.csv', index_col=0)
+    games_df = pd.read_csv('Games_dataset.csv', index_col=0)
+    similarity_df = pd.read_csv('sim_matrix.csv', index_col=0)
     return games_df, similarity_df
 
 
@@ -18,7 +18,7 @@ games_df, similarity_df = getdata()[0], getdata()[1]
 st.sidebar.markdown('<strong><span style="color: #8B2500;font-size: 26px;"> Game recommendation</span></strong>',unsafe_allow_html=True)
 
 #st.sidebar.markdown('An app by [Long Do](https://doophilong.github.io/Portfolio/)')
-st.sidebar.image('C:/Users/User/Desktop/game/Game-recommendation-system-main/pexels-pixabay-275033.jpg', use_column_width=True)
+st.sidebar.image('pexels-pixabay-275033.jpg', use_column_width=True)
 st.sidebar.markdown('<strong><span style="color: #EE4000;font-size: 26px;">:slot_machine: Choose your game !!!</span></strong>',unsafe_allow_html=True)
 ph = st.sidebar.empty()
 selected_game = ph.selectbox('Select one among the 787 games '
